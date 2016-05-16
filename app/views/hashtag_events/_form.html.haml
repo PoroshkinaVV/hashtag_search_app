@@ -1,0 +1,16 @@
+= form_for @hashtag_event do |f|
+  - if @hashtag_event.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@hashtag_event.errors.count, "error")} prohibited this hashtag_event from being saved:"
+      %ul
+        - @hashtag_event.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :hashtag
+    = f.text_field :hashtag
+  .field
+    = f.label :event
+    = f.text_field :event
+  .actions
+    = f.submit 'Save'

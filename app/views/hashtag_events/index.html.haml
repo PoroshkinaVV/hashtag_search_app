@@ -1,0 +1,23 @@
+%h1 Listing hashtag_events
+
+%table
+  %thead
+    %tr
+      %th Hashtag
+      %th Event
+      %th
+      %th
+      %th
+
+  %tbody
+    - @hashtag_events.each do |hashtag_event|
+      %tr
+        %td= hashtag_event.hashtag
+        %td= hashtag_event.event
+        %td= link_to 'Show', hashtag_event
+        %td= link_to 'Edit', edit_hashtag_event_path(hashtag_event)
+        %td= link_to 'Destroy', hashtag_event, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Hashtag event', new_hashtag_event_path
