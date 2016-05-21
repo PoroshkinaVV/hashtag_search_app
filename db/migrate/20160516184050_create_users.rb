@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :first_name, null: false, limit: 32
       t.string :second_name, limit: 32
       t.string :password_digest
+      t.integer :role, null: false
 
       t.index [:username, :email], unique: true
 

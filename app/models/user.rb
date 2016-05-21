@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   
   before_save {save.username = username.downcase}
 
+  ROLES = {0=>"модератор", 1=>"администратор"}
+  validates :role, presence: true, inclusion: {in: ROLES.keys}
   validates :username, presence: true, length: {maximum: 32}, 
 uniqueness: {case_sensitive: false}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

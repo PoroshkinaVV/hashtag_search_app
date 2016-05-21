@@ -18,16 +18,16 @@ ActiveRecord::Schema.define(version: 20160516184635) do
 
   create_table "events", force: :cascade do |t|
     t.string   "name",         limit: 32, null: false
-    t.date     "start_date",              null: false
-    t.date     "end_date",                null: false
+    t.datetime "start_at",                null: false
+    t.datetime "end_at",                  null: false
     t.text     "description"
-    t.time     "renew_period",            null: false
+    t.integer  "renew_period",            null: false
     t.integer  "user_id"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end
 
-  add_index "events", ["name", "start_date", "end_date"], name: "index_events_on_name_and_start_date_and_end_date", unique: true, using: :btree
+  add_index "events", ["name", "start_at", "end_at"], name: "index_events_on_name_and_start_at_and_end_at", unique: true, using: :btree
   add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
 
   create_table "hashtag_events", force: :cascade do |t|
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20160516184635) do
     t.string   "first_name",      limit: 32, null: false
     t.string   "second_name",     limit: 32
     t.string   "password_digest"
+    t.integer  "role",                       null: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end
