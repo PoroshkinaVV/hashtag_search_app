@@ -8,7 +8,7 @@
       %th Last name
       %th First name
       %th Second name
-      %th Password digest
+      %th 
       %th
       %th
       %th
@@ -21,7 +21,6 @@
         %td= user.last_name
         %td= user.first_name
         %td= user.second_name
-        %td= user.password_digest
         %td= link_to 'Show', user
         %td= link_to 'Edit', edit_user_path(user)
         %td= link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }

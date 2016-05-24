@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_many :events
   
-  before_save {save.username = username.downcase}
+  before_save {self.username = username.downcase}
 
   ROLES = {0=>"модератор", 1=>"администратор"}
   validates :role, presence: true, inclusion: {in: ROLES.keys}
