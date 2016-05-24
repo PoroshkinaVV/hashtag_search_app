@@ -14,7 +14,7 @@ length: {maximum: 40}, uniqueness: {scope: :username}
   validates :first_name, presence: true, length: {maximum: 32}
   validates :second_name, length: {maximum: 32}
   
-  validates :password, length: {minimum: 6}
+#  validates :password, length: {minimum: 6}
   
 
   has_secure_password
