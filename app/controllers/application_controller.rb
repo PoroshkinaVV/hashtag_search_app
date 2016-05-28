@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   def load_tweets
 #    @tweets = Twitter::REST::Client.bearer_token?
-#    @tweets = $client.user_timeline[0..4]
-    @tweets = $client.search("#ruby #ror")
+    @tweets = $client.user_timeline[0..4]
+#    @tweets = $client.search("#harrypotter")
   end
 end

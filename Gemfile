@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'twitter'
 gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
 gem 'thin'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
