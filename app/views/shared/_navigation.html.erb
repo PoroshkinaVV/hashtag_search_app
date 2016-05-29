@@ -22,10 +22,18 @@ class="form-control">
           <input type="password" placeholder="Password" 
 class="form-control">
         </div>
-        <button type="submit" class="btn btn-success">Sign 
-in</button>
+        <button type="submit" class="btn btn-success">Sign In</button>
       </form>
     </div>
   </div>
+<%if signed_in? %>
+<li> <%= link_to current_user.username, current_user %> </li>
+<li> <%= link_to "Sign Out", signout_path, method: :delete %> </li>
+<% else %>
+<li> <%= link_to "Sign In", new_session_path %> </li>
+<% end %>
+
+
+
 </nav>
 
