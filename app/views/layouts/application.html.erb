@@ -11,10 +11,17 @@
 <body>
   <%= render 'shared/navigation' %>
   <div id="main-container" class="container">
-    <%= render 'shared/tweets' %> 
-    <%= yield %>
+    <div class="row">
+       <div class="col-md-9">
+         <%= yield %>
+       </div>
+       <div class="col-md-3">
+         <h2> About </h2>
+         <p> HashtagSearch application allow you to follow in Twitter 
+some events using hashtags </p>
+       </div> 
   </div>
-
+  <%= render 'shared/footer' %>
 
 </body>
 </html>

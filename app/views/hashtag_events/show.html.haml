@@ -2,10 +2,10 @@
 
 %p
   %b Hashtag:
-  = @hashtag_event.hashtag
+  = @hashtag_event.hashtag.name
 %p
   %b Event:
-  = @hashtag_event.event
+  = @hashtag_event.event.name
 
 = link_to 'Edit', edit_hashtag_event_path(@hashtag_event)
 \|

@@ -12,8 +12,8 @@
   %tbody
     - @hashtag_events.each do |hashtag_event|
       %tr
-        %td= hashtag_event.hashtag
-        %td= hashtag_event.event
+        %td= hashtag_event.hashtag.name
+        %td= hashtag_event.event.name
         %td= link_to 'Show', hashtag_event
         %td= link_to 'Edit', edit_hashtag_event_path(hashtag_event)
         %td= link_to 'Destroy', hashtag_event, :method => :delete, :data => { :confirm => 'Are you sure?' }

@@ -8,9 +8,9 @@
 
   .field
     = f.label :hashtag
-    = f.text_field :hashtag
+    = f.select(:hashtag_id, hashtag_options(f.object.hashtag_id))
   .field
     = f.label :event
-    = f.text_field :event
+    = f.select(:event_id, event_options(f.object.event_id))
   .actions
     = f.submit 'Save'

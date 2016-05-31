@@ -4,11 +4,11 @@
   %b Name:
   = @event.name
 %p
-  %b Start date:
-  = @event.start_date
+  %b Start at:
+  = @event.start_at
 %p
-  %b End date:
-  = @event.end_date
+  %b End at:
+  = @event.end_at
 %p
   %b Description:
   = @event.description
@@ -17,8 +17,14 @@
   = @event.renew_period
 %p
   %b User:
-  = @event.user
-
+  = @event.user.username
+%p
+  = @tweets = $client.search("#ruby")
+  - @event.hashtag_events.each do |h, search|
+    = h.hashtag.name
+  - @tweets.each do |tweet|
+    .content
+      = tweet.text  
 = link_to 'Edit', edit_event_path(@event)
 \|
 = link_to 'Back', events_path
