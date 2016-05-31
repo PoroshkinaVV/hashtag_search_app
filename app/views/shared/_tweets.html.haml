@@ -1,5 +1,11 @@
 %section#tweets
   %ul
     - @tweets.each do |tweet|
-      %li= link_to tweet.text, 
+      .content
+        .stream-item-header
+          %li= link_to "@#{tweet.user.screen_name}", 
 "https://www.twitter.com/#{tweet.user.screen_name}"
+        .js-tweet-text-container
+          %p.js-tweet-text
+            = tweet.text
+            = tweet.media

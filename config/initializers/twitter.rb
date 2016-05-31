@@ -9,3 +9,4 @@ $client = Twitter::REST::Client.new do |config|
   config.access_token_secret = 
 "uA7wc6Z4cT2JlWJeg4By9BgcHYHWfluMfxbZ7HLVfCNHV"
 end
+
