@@ -20,8 +20,7 @@
   = @event.user.username
 %p
   = @tweets = $client.search("#ruby")
-  - @event.hashtag_events.each do |h, search|
-    = h.hashtag.name
+  = @event.hashtag_events.join(',  ')
   - @tweets.each do |tweet|
     .content
       = tweet.text  
