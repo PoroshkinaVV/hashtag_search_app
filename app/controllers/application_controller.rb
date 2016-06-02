@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
   before_filter :load_tweets
-  
+    
   include SessionsHelper
 
   def load_tweets
@@ -12,4 +12,5 @@ class ApplicationController < ActionController::Base
     @tweets = $client.user_timeline[0..4]
 #     @tweets = $client.search("#harrypotter")
   end
+
 end

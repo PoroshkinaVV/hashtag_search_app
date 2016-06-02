@@ -18,12 +18,11 @@
 %p
   %b User:
   = @event.user.username
+ 
+%meta= @tweets = $client.search("##{@event.hashtag_events.map{|he| he.hashtag.name}.join(', # ')}")
 %p
-  = @tweets = $client.search("#ruby")
-  = @event.hashtag_events.join(',  ')
-  - @tweets.each do |tweet|
-    .content
-      = tweet.text  
+  = render 'shared/tweets'
+  
 = link_to 'Edit', edit_event_path(@event)
 \|
 = link_to 'Back', events_path

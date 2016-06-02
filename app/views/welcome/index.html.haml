@@ -1,0 +1,14 @@
+%head
+  %title
+    HashtagSearch
+  = stylesheet_link_tag    'application', media: 'all','data-turbolinks-track' => true 
+  = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  = csrf_meta_tags 
+  = stylesheet_link_tag 'navbar-fixed-top', media: 'all' 
+%body
+  = render 'shared/navigation' 
+  %div#main-container.container
+    %div.row
+      %div.col-md-9
+        %h1
+          Welcome!
